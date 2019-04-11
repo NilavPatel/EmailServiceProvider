@@ -1,6 +1,6 @@
 # EmailServiceProvider
 ````
-Generic class for mail serice with attchments.
+Generic class for mail service with attachments.
 ````
 
 ## Settings in Web.config file
@@ -23,11 +23,11 @@ Generic class for mail serice with attchments.
     <mailSettings>  
       <smtp deliveryMethod="Network">  
         <network  
-          host="localhost"  
-          port="25"  
+          host="[host]"  
+          port="[port]"  
           defaultCredentials="true"  
-          password="******" 
-          userName="username" />  
+          password="[password]" 
+          userName="[username]" />  
       </smtp>  
     </mailSettings>  
   </system.net>  
