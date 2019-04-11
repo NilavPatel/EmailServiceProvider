@@ -1,9 +1,10 @@
 # EmailServiceProvider
 ````
 Generic class for mail service with attachments.
+Examples avaialable for Asp.Net and Core
 ````
 
-## Settings in Web.config file
+## For Asp.Net, web.config file
 
 ### 1. Add mails to specific directory
 ````
@@ -31,4 +32,13 @@ Generic class for mail service with attachments.
       </smtp>  
     </mailSettings>  
   </system.net>  
+````
+## For Core, appsetting.json file
+
+### 3. SMTP server configuration
+````
+"Smtp": {
+    "DeliveryMethod": "SpecifiedPickupDirectory",
+    "PickupDirectoryLocation": "c:\\maildrop"
+  }  
 ````
