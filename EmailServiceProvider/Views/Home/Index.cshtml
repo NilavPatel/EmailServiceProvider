@@ -1,0 +1,72 @@
+﻿@model EmailServiceProvider.Models.MailViewModel
+@{
+    ViewBag.Title = "Mail Page";
+}
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row">
+        <div class="col col-sm-12">
+            <div class="form-group">
+                @Html.LabelFor(m => m.From)
+                @Html.TextBoxFor(m => m.From, new { @Class = "form-control" })
+                @Html.ValidationMessageFor(m => m.From)
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-sm-12">
+            <div class="form-group">
+                @Html.LabelFor(m => m.To)
+                @Html.TextBoxFor(m => m.To, new { @Class = "form-control" })
+                @Html.ValidationMessageFor(m => m.To)
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-sm-12">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Bcc)
+                @Html.TextBoxFor(m => m.Bcc, new { @Class = "form-control" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-sm-12">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Cc)
+                @Html.TextBoxFor(m => m.Cc, new { @Class = "form-control" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-sm-12">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Subject)
+                @Html.TextBoxFor(m => m.Subject, new { @Class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Subject)
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-sm-12">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Body)
+                @Html.TextAreaFor(m => m.Body, new { @Class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Body)
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-sm-12">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Attachments)
+                @Html.TextBoxFor(model => model.Attachments, "", new { @type = "file", @multiple = "multiple", @Class = "form-control" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-sm-1">
+            <input type="submit" value="Send" class="btn btn-primary" />
+        </div>
+    </div>
+}
