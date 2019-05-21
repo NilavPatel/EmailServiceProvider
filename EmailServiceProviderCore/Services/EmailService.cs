@@ -89,9 +89,12 @@ namespace EmailServiceProviderCore.Services
                         mailMessage.IsBodyHtml = true;
 
                         // Attachments
-                        foreach (var attchment in attachments)
+                        if (attachments != null && attachments.Count > 0)
                         {
-                            mailMessage.Attachments.Add(attchment.File);
+                            foreach (var attchment in attachments)
+                            {
+                                mailMessage.Attachments.Add(attchment.File);
+                            }
                         }
 
                         smtpClient.Send(mailMessage);
